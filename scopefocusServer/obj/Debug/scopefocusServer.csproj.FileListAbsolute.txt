@@ -1,0 +1,16 @@
+c:\users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\bin\Debug\ASCOM.scopefocusServer.Server.exe.config
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\bin\Debug\ASCOM.scopefocusServer.Server.exe
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\bin\Debug\ASCOM.scopefocusServer.Server.pdb
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\bin\Debug\ASCOM.Attributes.dll
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\bin\Debug\ASCOM.DeviceInterfaces.dll
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\bin\Debug\ASCOM.Exceptions.dll
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\bin\Debug\ASCOM.Utilities.dll
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\bin\Debug\ASCOM.Attributes.xml
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\bin\Debug\ASCOM.DeviceInterfaces.xml
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\bin\Debug\ASCOM.Exceptions.xml
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\bin\Debug\ASCOM.Utilities.xml
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\obj\Debug\ASCOM.scopefocusServer.frmMain.resources
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\obj\Debug\scopefocusServer.csproj.GenerateResource.Cache
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\obj\Debug\ASCOM.scopefocusServer.Server.exe
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\obj\Debug\ASCOM.scopefocusServer.Server.pdb
+C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\obj\Debug\ASCOM.scopefocusServer.ServerSetupDialog.resources

@@ -40,7 +40,7 @@ namespace ASCOM.scopefocusServer
         // Shared serial port. This will allow multiple drivers to use one single serial port.
         private static ASCOM.Utilities.Serial s_sharedSerial = new ASCOM.Utilities.Serial();        // Shared serial port
         private static int s_z = 0;     // counter for the number of connections to the serial port
-        private static bool connectedState;
+        //  private static bool connectedState;
 
 
 
@@ -224,7 +224,9 @@ namespace ASCOM.scopefocusServer
                             SharedSerial.Speed = ASCOM.Utilities.SerialSpeed.ps9600;
                             //                                SharedSerial.Handshake = ASCOM.Utilities.SerialHandshake.None;
                             SharedSerial.Connected = true;
-                            System.Threading.Thread.Sleep(2500);    //Stupid Arduino restarts when opening port - needs to wait
+                            System.Threading.Thread.Sleep(2500);  
+                                                          
+                              
                             string answer = SharedResources.rawCommand("G", true);
 
                      //       tl.LogMessage("Connection", "Trying to Connect");
@@ -248,9 +250,9 @@ namespace ASCOM.scopefocusServer
                             string versn = verTrim.Replace('V', ' ').Trim();
                             tl.LogMessage("Firmware Version: ", versn.ToString());
                             tl.LogMessage("StepSize", StepSize.ToString());
+                                string version = DriverVersion;
 
-
-                                   connectedState = true;
+                                   //connectedState = true;
                                 //    tl.LogMessage("Connected Set", "Connecting to port " + SharedSerial.PortName);
                                 // TODO connect to the device
                                 //    string version = DriverVersion;
@@ -264,8 +266,14 @@ namespace ASCOM.scopefocusServer
                                 //   bool contHold = false;
 
                                 // check if we are connected, return if we are
-                                if (SharedSerial.PortName != null && SharedResources.SharedSerial.Connected)  //Portname might not be right.....
-                                return;
+
+
+                                // remd 4-27-17
+                                //if (SharedSerial.PortName != null && SharedResources.SharedSerial.Connected)  //Portname might not be right.....
+                                //return;
+
+
+
                             // get the port name from the profile
                             //    string portName;
                             //using (ASCOM.Utilities.Profile p = new Profile())
@@ -468,7 +476,17 @@ namespace ASCOM.scopefocusServer
 
 
 
-
+        public static string DriverVersion
+        {
+            get
+            {
+                Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+                // string driverVersion = String.Format(CultureInfo.InvariantCulture, "{0}.{1}", version.Major, version.Minor);
+                string driverVersion = String.Format(CultureInfo.InvariantCulture, "{0}.{1}.{2}.{3}", version.Major, version.Minor, version.Build, version.Revision);
+                tl.LogMessage("DriverVersion Get", driverVersion);
+                return driverVersion;
+            }
+        }
 
 
 
@@ -722,6 +740,16 @@ namespace ASCOM.scopefocusServer
         /// </summary>
         private static Dictionary<string, DeviceHardware> connectedDevices = new Dictionary<string, DeviceHardware>();
 
+
+
+
+        /// <summary>
+        /// List of connected devices, keyed by a string ID
+        /// </summary>
+        //public static IDictionary<string, ConnectedDevice> ConnectedDevices
+        //{
+        //    get { return connectedDevices; }
+        //}
         /// <summary>
         /// This is called in the driver Connect(true) property,
         /// it add the device id to the list of devices if it's not there and increments the device count.
@@ -750,6 +778,18 @@ namespace ASCOM.scopefocusServer
             }
         }
 
+        ////unremd 4-27-17
+        //public static bool IsConnected(string deviceId)
+        //{
+        //    if (connectedDevices.ContainsKey(deviceId))
+        //        return (connectedDevices[deviceId].count > 0);
+        //    else
+        //        return false;
+        //}
+
+
+
+     //   remd 4-27-17
         public static bool IsConnected
         {
             get
@@ -761,13 +801,36 @@ namespace ASCOM.scopefocusServer
             }
         }
 
-        //public static bool IsConnected(string deviceId)
+
+
+        /// <summary>
+        /// Gives the camera handle and the number of connections
+        /// </summary>
+        //public class ConnectedDevice
         //{
-        //    if (connectedDevices.ContainsKey(deviceId))
-        //        return (connectedDevices[deviceId].count > 0);
-        //    else
-        //        return false;
+        //    public ConnectedDevice(IntPtr handle)
+        //    {
+        //        this.handle = handle;
+        //        this.connections = 1;
+        //    }
+        //    public IntPtr handle;
+        //    public int connections;
         //}
+
+        //public class DeviceHardware
+
+        //{
+        //   internal int count { set; get; }
+
+        //    internal DeviceHardware()
+        //    {
+        //        count = 0;
+        //    }
+        //}
+
+
+
+
 
         #endregion
 
@@ -777,6 +840,7 @@ namespace ASCOM.scopefocusServer
         /// Skeleton of a hardware class, all this does is hold a count of the connections,
         /// in reality extra code will be needed to handle the hardware in some way
         /// </summary>
+
         public class DeviceHardware
         {
             internal int count { set; get; }
@@ -793,8 +857,8 @@ namespace ASCOM.scopefocusServer
         //    return rawCommand(function, command, false);
         //}
 
-       //public static string rawCommand(string function, string command, bool raw)
-       public static string rawCommand(string command, bool raw)
+        //public static string rawCommand(string function, string command, bool raw)
+        public static string rawCommand(string command, bool raw)
         {
             try
             {
@@ -898,10 +962,11 @@ namespace ASCOM.scopefocusServer
 
             }
 
+    
+      
 
 
-
-        }
+    }
 
 
    

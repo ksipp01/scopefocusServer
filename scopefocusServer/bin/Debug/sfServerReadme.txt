@@ -1,5 +1,5 @@
 scopefocusServer Rotator driver
-Version 6.1.6324.28557
+Version 6.1.6326.20194
 ***This version allows for multiple connections***
 Must click properties on first use
 determine how many steps per degree and enter in setup. (StepSize = 1/Stepsperdegree, minimum of 0.01)

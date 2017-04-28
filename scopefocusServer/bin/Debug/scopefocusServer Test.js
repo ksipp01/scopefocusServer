@@ -1,5 +1,5 @@
 //*** CHECK THIS ProgID ***
-var X = new ActiveXObject("scopefocusServer.Rotator");
+var X = new ActiveXObject("ASCOM.scopefocusServer.Rotator");
 WScript.Echo("This is " + X.Name + ")");
 // You may want to uncomment this...
 // X.Connected = true;

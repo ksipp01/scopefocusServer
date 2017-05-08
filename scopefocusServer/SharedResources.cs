@@ -522,7 +522,7 @@ namespace ASCOM.scopefocusServer
         {
             rawCommand("S", false);
             //  tl.LogMessage("Halt", "Not implemented");
-            throw new ASCOM.MethodNotImplementedException("Halt");
+         //   throw new ASCOM.MethodNotImplementedException("Halt");
         }
 
 

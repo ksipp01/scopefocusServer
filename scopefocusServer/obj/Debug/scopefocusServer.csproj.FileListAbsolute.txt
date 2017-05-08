@@ -14,4 +14,3 @@ C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopef
 C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\obj\Debug\ASCOM.scopefocusServer.Server.exe
 C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\obj\Debug\ASCOM.scopefocusServer.Server.pdb
 C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\obj\Debug\ASCOM.scopefocusServer.ServerSetupDialog.resources
-C:\Users\ksipp_000\documents\visual studio 2015\Projects\scopefocusServer\scopefocusServer\obj\Debug\scopefocusServer.csprojResolveAssemblyReference.cache

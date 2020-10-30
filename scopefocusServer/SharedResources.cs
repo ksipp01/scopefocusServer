@@ -120,6 +120,14 @@ namespace ASCOM.scopefocusServer
                 return ASCOM.scopefocusServer.Properties.Settings.Default.ContHold;
             }
         }
+        public static bool rev
+        {
+            get
+            {
+                //  SharedResources.tl.LogMessage("StepsPerDegree", stepsPerDegree.ToString());
+                return ASCOM.scopefocusServer.Properties.Settings.Default.rev;
+            }
+        }
         public static string COMPort
         {
             get
@@ -488,6 +496,20 @@ namespace ASCOM.scopefocusServer
             }
         }
 
+        // added 10-27-2020 
+        private static short interfaceVersion = 2;
+        private static string driverShortName = "scopefocusServer Rotator";
+        public static short InterfaceVersion
+        {
+            // set by the driver wizard
+            get
+            {
+                tl.LogMessage(driverShortName + " InterfaceVersion Get", interfaceVersion.ToString());
+
+                //LogMessage("InterfaceVersion Get", "2");
+                return interfaceVersion;
+            }
+        }
 
 
 
@@ -518,6 +540,12 @@ namespace ASCOM.scopefocusServer
         //get { return SharedSerial.Connected; }
         //  }
 
+
+
+
+
+
+
         public static void Halt()
         {
             rawCommand("S", false);
@@ -525,6 +553,61 @@ namespace ASCOM.scopefocusServer
          //   throw new ASCOM.MethodNotImplementedException("Halt");
         }
 
+
+        // added 10-27-2020
+        //public static bool CanReverse
+        //{
+        //    get
+        //    {
+        //        //tl.LogMessage("CanReverse Get", true.ToString());
+        //        return true;
+        //    }
+        //}
+        // added 10-27-2020
+        //private static bool _reverseState;
+        //private static void Reverstate()
+        //{
+        //    string rev = rawCommand("R", false);
+
+        //    if (rev == "1")
+        //    {
+        //        tl.LogMessage("ReverseState ", true.ToString());
+        //        _reverseState = true;
+        //    }
+        //    else
+        //    {
+        //        tl.LogMessage("ReverseState ", false.ToString());
+        //        _reverseState = false;
+        //    }
+        //}
+
+
+
+        //public static bool ReverseState
+        //{
+            
+        //    get
+        //    {
+        //        return _reverseState;
+
+        //        //  tl.LogMessage("Reverse Get", "Not implemented");
+        //        // throw new ASCOM.PropertyNotImplementedException("Reverse", false);
+        //    }
+        //    set
+        //    {
+        //        if (value != _reverseState)
+        //        {
+        //            if (value)
+        //                rawCommand("R 1", false);
+        //            else
+        //                rawCommand("R 0", false);
+
+        //        }
+
+        //        //  tl.LogMessage("Reverse Set", "Not implemented");
+        //        //  throw new ASCOM.PropertyNotImplementedException("Reverse", true);
+        //    }
+        //}
 
 
 

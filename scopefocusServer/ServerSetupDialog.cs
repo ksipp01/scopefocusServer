@@ -152,6 +152,8 @@ namespace ASCOM.scopefocusServer
                 else
                     checkBox2.Checked = false;
             }
+            checkBox1.Checked = false;
+            
             if (!checkBox1.Checked)
                 textBox1.Enabled = false;
             checkTextBox();
@@ -206,6 +208,7 @@ namespace ASCOM.scopefocusServer
         private static string comPortDefault = "COM4";
         private static string traceStateDefault = "false";
         private static int stepsPerDegree;
+        private static float setPosition;
         internal void ReadProfile()
         {
             using (Profile driverProfile = new Profile())
@@ -284,7 +287,11 @@ namespace ASCOM.scopefocusServer
                     p.DeviceType = "Rotator";
                     p.WriteValue(driverID, "ComPort", (string)comboBoxComPort.SelectedItem);
                //     p.WriteValue(driverID, "SetPos", checkBox1.Checked.ToString());
-                    p.WriteValue(driverID, "SetPos", "false");  //leave this false so needs to be check everytime used
+
+
+                    //p.WriteValue(driverID, "SetPos", "false");  //leave this false so needs to be check everytime used
+                    
+                    
                     // 6-16-16 added 2 lines below
                     //   p.WriteValue(Rotator.driverID, "Reverse", reverseCheckBox1.Checked.ToString());  // motor sitting shaft up turns clockwise with increasing numbers if NOT reversed
                     p.WriteValue(driverID, "ContHold", checkBox2.Checked.ToString());
@@ -313,6 +320,8 @@ namespace ASCOM.scopefocusServer
                 // Rotator.traceState = chkTrace.Checked;
                 traceState = chkTrace.Checked;
                 stepsPerDegree = Convert.ToInt32(textBox2.Text.ToString());
+                if (checkBox1.Checked)
+                setPosition = float.Parse(textBox1.Text.ToString());
               //  stepsPerDegree = 150;
             }
 
@@ -320,7 +329,8 @@ namespace ASCOM.scopefocusServer
             ASCOM.scopefocusServer.Properties.Settings.Default.COMPort = comPort;
             ASCOM.scopefocusServer.Properties.Settings.Default.traceState = traceState;
             ASCOM.scopefocusServer.Properties.Settings.Default.ContHold = checkBox2.Checked;
-            ASCOM.scopefocusServer.Properties.Settings.Default.SetPos = checkBox1.Checked;
+              ASCOM.scopefocusServer.Properties.Settings.Default.SetPos = checkBox1.Checked;
+            ASCOM.scopefocusServer.Properties.Settings.Default.SetPosValue = setPosition;
             ASCOM.scopefocusServer.Properties.Settings.Default.Save();
 
 

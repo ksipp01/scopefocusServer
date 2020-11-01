@@ -244,7 +244,7 @@ namespace ASCOM.scopefocusServer
                                 {
                                     tl.LogMessage("Set Position To", SetPosValue.ToString());
                                     rawCommand("P " + Math.Round(SetPosValue * stepsPerDegree + (360 * stepsPerDegree), 0).ToString(), false);
-                                  
+                                    ASCOM.scopefocusServer.Properties.Settings.Default.SetPos = false;
                                 }
                             if (contHold)
                                 rawCommand("C 1", false); //continuous hold on
@@ -765,12 +765,25 @@ namespace ASCOM.scopefocusServer
             if (absTargetAngle1 < 0 || absTargetAngle1 > 720)
             {
                 targetAngle = absTargetAngle2;
-                return targetAngle * stepsPerDegree;
+                if (targetAngle < 0 || targetAngle > 720)
+                {
+                    tl.LogMessage("Invalid Position value: ", targetAngle.ToString());
+                    throw new ASCOM.InvalidValueException();
+                }
+                else
+                    return targetAngle * stepsPerDegree;
             }
             if (absTargetAngle2 < 0 || absTargetAngle2 > 720)
             {
                 targetAngle = absTargetAngle1;
-                return targetAngle * stepsPerDegree;
+                targetAngle = absTargetAngle2;
+                if (targetAngle < 0 || targetAngle > 720)
+                {
+                    tl.LogMessage("Invalid Position value: ", targetAngle.ToString());
+                    throw new ASCOM.InvalidValueException();
+                }
+                else
+                    return targetAngle * stepsPerDegree;
             }
 
 

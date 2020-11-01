@@ -9,7 +9,6 @@ C:\Users\ksipp_000\Documents\Visual Studio 2015\Projects\scopefocusServer\scopef
 C:\Users\ksipp_000\Documents\Visual Studio 2015\Projects\scopefocusServer\scopefocusServer\bin\Debug\ASCOM.DeviceInterfaces.xml
 C:\Users\ksipp_000\Documents\Visual Studio 2015\Projects\scopefocusServer\scopefocusServer\bin\Debug\ASCOM.Exceptions.xml
 C:\Users\ksipp_000\Documents\Visual Studio 2015\Projects\scopefocusServer\scopefocusServer\bin\Debug\ASCOM.Utilities.xml
-C:\Users\ksipp_000\Documents\Visual Studio 2015\Projects\scopefocusServer\scopefocusServer\obj\Debug\scopefocusServer.csprojResolveAssemblyReference.cache
 C:\Users\ksipp_000\Documents\Visual Studio 2015\Projects\scopefocusServer\scopefocusServer\obj\Debug\ASCOM.scopefocusServer.frmMain.resources
 C:\Users\ksipp_000\Documents\Visual Studio 2015\Projects\scopefocusServer\scopefocusServer\obj\Debug\ASCOM.scopefocusServer.ServerSetupDialog.resources
 C:\Users\ksipp_000\Documents\Visual Studio 2015\Projects\scopefocusServer\scopefocusServer\obj\Debug\scopefocusServer.csproj.GenerateResource.Cache
